@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeo local</title>
+</head>
+<body>
+
+  <video src="./mi-video/WOS - MIRÁ MAMÁ (Video Oficial) (720p).mp4" width="640" height="360" controls poster="mi-video/thumbnail.jpg">
+    Tu navegador no soporta la reproducción de video.
+  </video>
+
+  <div class="controles-video">
+    <button id="btnReproducir">Reproducir</button>
+    <button id="btnPausar">Pausar</button>
+    <button id="btnDescargar">Descargar</button>
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById('miVideo');
+  const btnReproducir = document.getElementById('btnReproducir');
+  const btnPausar = document.getElementById('btnPausar');
+  const btnDescargar = document.getElementById('btnDescargar');
+
+  btnReproducir.addEventListener('click', () => {
+    video.play();
+  });
+
+  btnPausar.addEventListener('click', () => {
+    video.pause();
+  });
+
+  btnDescargar.addEventListener('click', () => {
+    const urlVideo = video.src;
+    const nombreVideo = urlVideo.split('/').pop(); // Extraer nombre del archivo
+
+    // Implementar la lógica de descarga del video (por ejemplo, usando la API Fetch)
+    // Aquí se muestra un ejemplo simplificado sin implementación real
+    alert(`Descarga del video "${nombreVideo}" no implementada aún.`);
+  });
+</script>
+
+</body>
+</html>
